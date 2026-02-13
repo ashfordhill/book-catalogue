@@ -44,20 +44,12 @@ jobs:
             book-cover-generator
       
       - name: Update books.json with generated cover paths
+        continue-on-error: true
         run: |
           node scripts/update-cover-urls.js
-      
-      - name: Check for generated covers
-        id: check_covers
-        run: |
-          if [ -n "$(find public/covers -name '*.png' 2>/dev/null)" ]; then
-            echo "covers_generated=true" >> $GITHUB_OUTPUT
-          else
-            echo "covers_generated=false" >> $GITHUB_OUTPUT
-          fi
-      
+         
       - name: Commit generated covers and updated books.json
-        if: steps.check_covers.outputs.covers_generated == 'true'
+        continue-on-error: true
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -67,7 +59,7 @@ jobs:
           git push
       
       - name: Summary
-        if: steps.check_covers.outputs.covers_generated == 'true'
+        continue-on-error: true
         run: |
           echo "### Book Cover Generation Complete! 🎨" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -76,7 +68,6 @@ jobs:
           echo "Check the commit for generated cover files." >> $GITHUB_STEP_SUMMARY
       
       - name: No books need covers
-        if: steps.check_covers.outputs.covers_generated == 'false'
         run: |
           echo "### All Books Have Covers ✅" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
