@@ -1,0 +1,79 @@
+name: Screenshot & Deploy to Cloudflare
+
+on:
+  workflow_run:
+    workflows: ["Generate Book Covers"]
+    types:
+      - completed
+  # Allow manual trigger for fresh snapshots
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  screenshot-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build Vite app
+        run: npm run build
+      
+      - name: Start preview server
+        run: npm run preview &
+      
+      - name: Wait for server to start
+        run: sleep 3
+      
+      - name: Take visual records
+        id: capture
+        uses: ashfordhill/puppeteer-action@v7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          url: 'http://localhost:4173'
+          folder: 'timeline'
+          basename: 'screenshot'
+          make_gif: 'true'
+          gif_name: 'timeline.gif'
+          frame_duration: '2'
+          scale_width: '1024'
+          auto_screenshots: 'true'
+      
+      - name: Commit screenshots if changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          
+          git add timeline/
+          if git diff --staged --quiet; then
+            echo "No screenshot changes to commit"
+          else
+            git commit -m "chore: update screenshots and timeline GIF [skip ci]"
+            git push origin HEAD:${{ github.ref }}
+          fi
+      
+      - name: Summary
+        run: |
+          echo "### Screenshots Captured & App Built ✨" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Built Vite app with latest changes" >> $GITHUB_STEP_SUMMARY
+          echo "📸 Captured visual records in \`timeline/\` folder" >> $GITHUB_STEP_SUMMARY
+          echo "🎬 Generated timeline GIF" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Deployment:** Cloudflare Pages deployment auto-triggered at books.ashhill.dev" >> $GITHUB_STEP_SUMMARY

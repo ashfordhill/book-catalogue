@@ -1,0 +1,17 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+RUN apk add --no-cache cairo-dev pango-dev giflib-dev jpeg-dev pixman-dev freetype-dev build-base
+
+COPY package*.json ./
+RUN npm ci --only=production && npm install openai
+
+COPY scripts/ ./scripts/
+COPY public/books.json ./public/books.json
+COPY public/config.json ./public/config.json
+RUN mkdir -p ./public/covers
+
+ENV NODE_ENV=production
+
+ENTRYPOINT ["node", "scripts/generate-covers.js"]

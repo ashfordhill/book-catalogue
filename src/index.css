@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black min-h-screen relative;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 0, 255, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(255, 0, 255, 0.03) 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0, 255, 255, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 255, 255, 0.03) 3px
+      ),
+      #0a0a0a;
+  }
+
+  /* Subtle side “action” – soft glows so the middle stays clean */
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: min(28vw, 320px);
+    max-width: 320px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::before {
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.06) 0%,
+      rgba(139, 92, 246, 0.02) 40%,
+      transparent 100%
+    );
+  }
+  body::after {
+    right: 0;
+    background: linear-gradient(
+      270deg,
+      rgba(255, 45, 154, 0.05) 0%,
+      rgba(255, 45, 154, 0.015) 40%,
+      transparent 100%
+    );
+  }
+  
+  ::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #000;
+    border: 2px solid #000;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #8b5cf6;
+    border: 2px solid #000;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a78bfa;
+  }
+}

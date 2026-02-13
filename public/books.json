@@ -1,0 +1,64 @@
+[
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "coverUrl": "covers/cyberpunk-hybrid/atomic-habits.png",
+    "synopsis": "A transformative guide on building better habits through small, incremental changes. Clear's framework of making habits obvious, attractive, easy, and satisfying is both practical and backed by science. The emphasis on systems over goals fundamentally changed how I approach personal development.",
+    "tags": ["self-help", "productivity", "psychology"],
+    "quotes": [
+      "You do not rise to the level of your goals. You fall to the level of your systems.",
+      "Every action you take is a vote for the type of person you wish to become."
+    ],
+    "reviewFile": "/reviews/atomic-habits.md"
+  },
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt & David Thomas",
+    "coverUrl": "covers/cyberpunk-hybrid/the-pragmatic-programmer.png",
+    "synopsis": "Essential reading for any developer. Timeless advice on craftsmanship, continuous learning, and taking ownership of your code. The DRY principle, orthogonality, and \"programming by coincidence\" are concepts I reference constantly.",
+    "tags": ["programming", "software engineering", "career"],
+    "quotes": [
+      "Care about your craft.",
+      "Don't live with broken windows."
+    ],
+    "reviewFile": "/reviews/pragmatic-programmer.md"
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "coverUrl": "covers/cyberpunk-hybrid/thinking-fast-and-slow.png",
+    "synopsis": "Kahneman's exploration of System 1 (fast, intuitive) and System 2 (slow, deliberate) thinking reveals the cognitive biases that shape our decisions. Dense but rewarding—fundamentally changed how I evaluate my own thought processes and decision-making.",
+    "tags": ["psychology", "decision-making", "behavioral economics"],
+    "quotes": [
+      "Nothing in life is as important as you think it is while you are thinking about it."
+    ],
+    "reviewFile": ""
+  },
+  {
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "coverUrl": "covers/cyberpunk-hybrid/deep-work.png",
+    "synopsis": "Newport makes a compelling case for the value of focused, distraction-free work in an increasingly noisy world. The strategies for cultivating deep work habits are immediately actionable, though the cultural critique sometimes feels overstated.",
+    "tags": ["productivity", "focus", "career"],
+    "quotes": [],
+    "reviewFile": ""
+  },
+  {
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "coverUrl": "covers/cyberpunk-hybrid/sapiens.png",
+    "synopsis": "A sweeping history of humankind from the Stone Age to the modern era. Harari's ability to synthesize anthropology, biology, and history into compelling narratives is remarkable. Some arguments feel speculative, but it's consistently thought-provoking.",
+    "tags": ["history", "anthropology", "philosophy"],
+    "quotes": [],
+    "reviewFile": ""
+  },
+  {
+    "title": "The Design of Everyday Things",
+    "author": "Don Norman",
+    "coverUrl": "covers/cyberpunk-hybrid/the-design-of-everyday-things.png",
+    "synopsis": "Norman's principles of user-centered design are foundational to understanding how humans interact with objects and systems. Once you understand affordances and signifiers, you start seeing design everywhere—both good and bad.",
+    "tags": ["design", "UX", "psychology"],
+    "quotes": [],
+    "reviewFile": ""
+  }
+]

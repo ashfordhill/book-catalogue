@@ -1,0 +1,212 @@
+/* Shared Typography Styles */
+.mono-text {
+  font-family: 'IBM Plex Mono', 'Space Mono', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mono-text-sm {
+  composes: mono-text;
+  font-size: 0.875rem;
+}
+
+.mono-text-base {
+  composes: mono-text;
+  font-size: 1rem;
+}
+
+.mono-text-lg {
+  composes: mono-text;
+  font-size: 1.125rem;
+}
+
+.mono-text-xl {
+  composes: mono-text;
+  font-size: 1.25rem;
+}
+
+.mono-text-2xl {
+  composes: mono-text;
+  font-size: 1.5rem;
+}
+
+.mono-text-3xl {
+  composes: mono-text;
+  font-size: 1.875rem;
+}
+
+/* Color Classes */
+.text-purple-primary {
+  color: #a78bfa;
+}
+
+.text-purple-secondary {
+  color: rgba(167, 139, 250, 0.7);
+}
+
+.text-purple-tertiary {
+  color: rgba(167, 139, 250, 0.5);
+}
+
+.bg-purple-primary {
+  background-color: #8b5cf6;
+}
+
+.bg-purple-secondary {
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+/* Border Classes */
+.border-purple {
+  border: 2px solid #8b5cf6;
+}
+
+.border-purple-light {
+  border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.border-purple-lighter {
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Button Styles */
+.btn-purple {
+  composes: mono-text-sm;
+  padding: 0.5rem 1rem;
+  border: 2px solid #8b5cf6;
+  background-color: transparent;
+  color: #a78bfa;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-purple:hover {
+  background-color: rgba(139, 92, 246, 0.2);
+}
+
+.btn-purple-filled {
+  composes: btn-purple;
+  background-color: #8b5cf6;
+  color: #000;
+}
+
+.btn-purple-filled:hover {
+  background-color: #7c3aed;
+}
+
+/* Card Styles */
+.card-purple {
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 0.75rem;
+  background-color: #18181b;
+}
+
+.card-purple-hover {
+  composes: card-purple;
+  transition: border-color 0.3s;
+}
+
+.card-purple-hover:hover {
+  border-color: #8b5cf6;
+}
+
+/* Book Cover Styles */
+.book-cover {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 0.5rem;
+}
+
+.book-cover-sm {
+  composes: book-cover;
+  max-width: 200px;
+}
+
+.book-cover-md {
+  composes: book-cover;
+  max-width: 240px;
+}
+
+.book-cover-lg {
+  composes: book-cover;
+  max-width: 300px;
+}
+
+/* Tag Styles – same texture as nav/buttons: 2px border, solid fill, mono uppercase */
+.tag {
+  composes: mono-text-sm;
+  padding: 0.35rem 0.75rem;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  display: inline-block;
+  font-weight: 700;
+  transition: filter 0.2s;
+}
+.tag:hover {
+  filter: brightness(1.1);
+}
+
+.tag-neon-pink {
+  background-color: #ff2d9a;
+  color: #0a0a0a;
+  border-color: #ff2d9a;
+}
+.tag-mint {
+  background-color: #2dffc4;
+  color: #0a0a0a;
+  border-color: #2dffc4;
+}
+.tag-orange {
+  background-color: #ff9f43;
+  color: #0a0a0a;
+  border-color: #ff9f43;
+}
+.tag-cyan {
+  background-color: #00d9ff;
+  color: #0a0a0a;
+  border-color: #00d9ff;
+}
+.tag-purple {
+  background-color: #bc13fe;
+  color: #0a0a0a;
+  border-color: #bc13fe;
+}
+.tag-yellow {
+  background-color: #ffeaa7;
+  color: #0a0a0a;
+  border-color: #ffeaa7;
+}
+
+/* Section Headers – accent variety (not all purple) */
+.section-header {
+  composes: mono-text-sm;
+  color: #a78bfa;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.section-header-synopsis {
+  color: #00d9ff;
+  border-bottom-color: rgba(0, 217, 255, 0.4);
+}
+.section-header-quotes {
+  color: #ff9f43;
+  border-bottom-color: rgba(255, 159, 67, 0.4);
+}
+.section-header-purple {
+  color: #a78bfa;
+  border-bottom-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Quote Styles – accent border */
+.quote {
+  border-left: 2px solid #ff9f43;
+  padding-left: 1rem;
+  font-style: italic;
+  color: rgba(212, 212, 216, 0.9);
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+}

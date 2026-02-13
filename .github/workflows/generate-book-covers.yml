@@ -1,0 +1,96 @@
+name: Generate Book Covers
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-covers:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install openai
+      
+      - name: Build Docker image
+        run: |
+          docker build -f Dockerfile.covers -t book-cover-generator .
+      
+      - name: Generate book covers
+        id: generate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          mkdir -p public/covers
+          
+          docker run --rm \
+            -v ${{ github.workspace }}/public/covers:/app/public/covers \
+            -e OPENAI_API_KEY="${OPENAI_API_KEY}" \
+            book-cover-generator
+      
+      - name: Update books.json with generated cover paths
+        run: |
+          node scripts/update-cover-urls.js
+      
+      - name: Check for generated covers
+        id: check_covers
+        run: |
+          if [ -n "$(find public/covers -name '*.png' 2>/dev/null)" ]; then
+            echo "covers_generated=true" >> $GITHUB_OUTPUT
+          else
+            echo "covers_generated=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit generated covers and updated books.json
+        if: steps.check_covers.outputs.covers_generated == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          git add public/covers/ public/books.json
+          git commit -m "chore: add generated book covers [skip ci]"
+          git push
+      
+      - name: Summary
+        if: steps.check_covers.outputs.covers_generated == 'true'
+        run: |
+          echo "### Book Cover Generation Complete! 🎨" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Successfully generated covers and updated \`books.json\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Check the commit for generated cover files." >> $GITHUB_STEP_SUMMARY
+      
+      - name: No books need covers
+        if: steps.check_covers.outputs.covers_generated == 'false'
+        run: |
+          echo "### All Books Have Covers ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "No books with empty \`coverUrl\` found in books.json." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "To generate covers for a new book, add it to \`public/books.json\` with an empty \`coverUrl\` field:" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
+          echo "{" >> $GITHUB_STEP_SUMMARY
+          echo '  "title": "Your Book",' >> $GITHUB_STEP_SUMMARY
+          echo '  "author": "Author Name",' >> $GITHUB_STEP_SUMMARY
+          echo '  "coverUrl": "",' >> $GITHUB_STEP_SUMMARY
+          echo '  "synopsis": "...",' >> $GITHUB_STEP_SUMMARY
+          echo '  "tags": [],' >> $GITHUB_STEP_SUMMARY
+          echo '  "quotes": [],' >> $GITHUB_STEP_SUMMARY
+          echo '  "reviewFile": ""' >> $GITHUB_STEP_SUMMARY
+          echo "}" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

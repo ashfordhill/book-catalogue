@@ -1,0 +1,14 @@
+{
+  "_comment_dalleParams": "DALL-E 3 API parameters for image generation",
+  "_comment_coverStyle": "hybrid: DALL-E background only, then programmatic frame + title/author. backgroundStyleString = prompt for background art (no text).",
+  "dalleParams": {
+    "style": "natural",
+    "quality": "standard",
+    "size": "1024x1792"
+  },
+  "coverStyle": {
+    "hybrid": true,
+    "folderName": "cyberpunk-hybrid",
+    "backgroundStyleString": "Minimalist cyberpunk aesthetic: dark background, neon purple and violet accents, subtle geometric shapes and grid lines, terminal/digital texture. High contrast, suitable for a book catalogue. No text or typography."
+  }
+}
