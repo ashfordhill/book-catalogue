@@ -2,10 +2,12 @@
 
 Intended to be hosted on <https://books.ashhill.dev>
 
-![](timeline/timeline.gif)
+<div align="center" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+  <img src="timeline/screenshot-latest.png" width="600" style="margin:0 8px;" />
+</div>
 
 <div align="center" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-  <img src="timeline/timeline.gif" alt="SITE_GIF" width="300" style="margin:0 8px;" />
+  <img src="timeline/timeline.gif" width="300" style="margin:0 8px;" />
 </div>
 
 ## Maintenance
