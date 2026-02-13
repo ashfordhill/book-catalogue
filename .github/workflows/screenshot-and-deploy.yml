@@ -32,18 +32,18 @@ jobs:
       - name: Build Vite app
         run: npm run build
       
-      - name: Start preview server
-        run: npm run preview &
-      
-      - name: Wait for server to start
+      - name: Start preview server (bind to all interfaces)
+        run: npm run preview -- --host &
+
+      - name: Wait for server to be ready (checks index content)
         run: |
-          # Poll localhost until the preview server responds (timeout after 60s)
-          for i in {1..60}; do
-            if curl -sSf http://localhost:4173 >/dev/null 2>&1; then
-              echo "Server is up"
+          # Poll until the preview server serves the app index with the root marker (timeout after 120s)
+          for i in {1..120}; do
+            if curl -sSf http://localhost:4173/index.html 2>/dev/null | grep -q '<div id="root"'; then
+              echo "Server is ready and serving index.html"
               break
             fi
-            echo "Waiting for server... ($i)"
+            echo "Waiting for server to be ready... ($i)"
             sleep 1
           done
       

@@ -16,7 +16,6 @@
     "@mui/material": "^7.3.8",
     "canvas": "^3.2.1",
     "framer-motion": "^12.33.0",
-    "gif.js": "^0.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-markdown": "^10.1.0",
