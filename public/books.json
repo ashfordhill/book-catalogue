@@ -1,88 +1,142 @@
 [
   {
-    "title": "Atomic Habits",
-    "author": "James Clear",
-    "coverUrl": "/covers/cyberpunk-hybrid/atomic-habits.png",
-    "synopsis": "A transformative guide on building better habits through small, incremental changes. Clear's framework of making habits obvious, attractive, easy, and satisfying is both practical and backed by science. The emphasis on systems over goals fundamentally changed how I approach personal development.",
+    "title": "Shabbat Effect",
+    "author": "Alan Morinis",
+    "coverUrl": "",
+    "synopsis": "PLACEHOLDER",
     "tags": [
-      "self-help",
-      "productivity",
-      "psychology"
-    ],
-    "quotes": [
-      "You do not rise to the level of your goals. You fall to the level of your systems.",
-      "Every action you take is a vote for the type of person you wish to become."
-    ],
-    "reviewFile": "/reviews/atomic-habits.md"
-  },
-  {
-    "title": "The Pragmatic Programmer",
-    "author": "Andrew Hunt & David Thomas",
-    "coverUrl": "/covers/cyberpunk-hybrid/the-pragmatic-programmer.png",
-    "synopsis": "Essential reading for any developer. Timeless advice on craftsmanship, continuous learning, and taking ownership of your code. The DRY principle, orthogonality, and \"programming by coincidence\" are concepts I reference constantly.",
-    "tags": [
-      "programming",
-      "software engineering",
-      "career"
-    ],
-    "quotes": [
-      "Care about your craft.",
-      "Don't live with broken windows."
-    ],
-    "reviewFile": "/reviews/pragmatic-programmer.md"
-  },
-  {
-    "title": "Thinking, Fast and Slow",
-    "author": "Daniel Kahneman",
-    "coverUrl": "/covers/cyberpunk-hybrid/thinking-fast-and-slow.png",
-    "synopsis": "Kahneman's exploration of System 1 (fast, intuitive) and System 2 (slow, deliberate) thinking reveals the cognitive biases that shape our decisions. Dense but rewarding—fundamentally changed how I evaluate my own thought processes and decision-making.",
-    "tags": [
-      "psychology",
-      "decision-making",
-      "behavioral economics"
-    ],
-    "quotes": [
-      "Nothing in life is as important as you think it is while you are thinking about it."
-    ],
-    "reviewFile": ""
-  },
-  {
-    "title": "Deep Work",
-    "author": "Cal Newport",
-    "coverUrl": "/covers/cyberpunk-hybrid/deep-work.png",
-    "synopsis": "Newport makes a compelling case for the value of focused, distraction-free work in an increasingly noisy world. The strategies for cultivating deep work habits are immediately actionable, though the cultural critique sometimes feels overstated.",
-    "tags": [
-      "productivity",
-      "focus",
-      "career"
-    ],
-    "quotes": [],
-    "reviewFile": ""
-  },
-  {
-    "title": "Sapiens",
-    "author": "Yuval Noah Harari",
-    "coverUrl": "/covers/cyberpunk-hybrid/sapiens.png",
-    "synopsis": "A sweeping history of humankind from the Stone Age to the modern era. Harari's ability to synthesize anthropology, biology, and history into compelling narratives is remarkable. Some arguments feel speculative, but it's consistently thought-provoking.",
-    "tags": [
-      "history",
-      "anthropology",
+      "religion",
+      "wisdom",
       "philosophy"
     ],
-    "quotes": [],
+    "quotes": [
+      "Only when consciousness is brightly illumindated will we be in a position to be vigilant about our actions rather than governed by our habits or unconscious forces.",
+      "When the mind is dull, the world appears as if seen through a shadowy veil [...].",
+      "The bright mind sees clearly, with a quality we experience when we awaken to look out over the desert on a crisp winter morning."
+    ],
+    "reviewFile": "reviews/shabbat-effect.md"
+  },
+  {
+    "title": "On Character: Choices That Define a Life",
+    "author": "Stanley McChrystal",
+    "coverUrl": "",
+    "synopsis": "PLACEHOLDER",
+    "tags": [
+      "wisdom",
+      "philosophy",
+      "reflection"
+    ],
+    "quotes": [
+      "For most of life, we are assessed by our actions, inviting others to judge us by what we do. [...] We can claim to be one thing, but in the end, we are what we do.",
+      "A seaworthy ship, fully outfitted with sails but moored tightly to a dock, will not take to sea with the strongest of winds. Instead, battered but unable to move, it will tear itself apart.",
+      ""
+    ],
     "reviewFile": ""
   },
   {
-    "title": "The Design of Everyday Things",
-    "author": "Don Norman",
-    "coverUrl": "/covers/cyberpunk-hybrid/the-design-of-everyday-things.png",
-    "synopsis": "Norman's principles of user-centered design are foundational to understanding how humans interact with objects and systems. Once you understand affordances and signifiers, you start seeing design everywhere—both good and bad.",
+    "title": "Reincarnation",
+    "author": "Thich Nhat Hanh",
+    "coverUrl": "",
+    "synopsis": "PLACEHOLDER",
     "tags": [
-      "design",
-      "UX",
-      "psychology"
+      "religion",
+      "buddhism",
+      "wisdom"
     ],
-    "quotes": [],
+    "quotes": [
+      "According to Buddhist teachings, everything at every level of experience is of the nature to change. Everything is flow - and yet we are capable of guiding that flow",
+      "We always have the chance to correct the past. We say that the past is already gone, but the past is always returning in a new manifestation, and we can correct it if needed."
+    ],
+    "reviewFile": ""
+  },
+  {
+    "title": "The Five People You Meet in Heaven",
+    "author": "Mitch Albom",
+    "coverUrl": "",
+    "synopsis": "PLACEHOLDER",
+    "tags": [
+      "fiction",
+      "cerebral",
+      "philosophy"
+    ],
+    "quotes": [
+      "Fairness does not govern life and death. If it did, no good person would ever die young.",
+      "Sacrifice is a part of life. It’s supposed to be. It’s not something to regret. It’s something to aspire to.",
+      "Lost love is still love, Eddie. It takes a different form, that's all. You can't see their smile or bring them food or tousle their hair or move them around a dance floor. But when those senses weaken, another heightens. Memory. Memory becomes your partner. You nurture it. You hold it. You dance with it."
+    ],
+    "reviewFile": ""
+  },
+  {
+    "title": "King Lear",
+    "author": "William Shakespeare",
+    "coverUrl": "",
+    "synopsis": "PLACEHOLDER",
+    "tags": [
+      "fiction",
+      "shakespeare",
+      "relationships"
+    ],
+    "quotes": [
+      "A love that makes breath poor, and speech unable.",
+      "Nothing can come of nothing.",
+      "We that are young hall never see so much, nor live so long."
+    ],
+    "reviewFile": ""
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "coverUrl": "",
+    "synopsis": "PLACEHOLDER",
+    "tags": [
+      "fiction",
+      "allegory",
+      "fable"
+    ],
+    "quotes": [
+      "When we love, we always strive to become better than we are. When we strive to become better than we are, everything around us becomes better too.",
+      "When you want something, all the universe conspires in helping you to achieve it."
+    ],
+    "reviewFile": ""
+  },
+  {
+    "title": "Ask Iwata",
+    "author": "Satoru Iwata",
+    "coverUrl": "",
+    "synopsis": "PLACEHOLDER",
+    "tags": [
+      "memoir",
+      "wisdom",
+      "gaming",
+      "strategy"
+    ],
+    "quotes": [
+      "The more frustrated someone is, the more important it becomes to listen to them.",
+      "I'm always asking Itoi, 'How did you know half a year out that this would be so popular?' Without fail, Itoi answers the same way: 'I don't predict the future. I simply notice the world starting to change a little before everybody else.",
+      "If Apple and Nintendo have something in common, it's increasing appeal through simplification.",
+      "Good ideas solve multiple problems in a flash."
+    ],
+    "reviewFile": ""
+  },
+  {
+    "title": "Primal Intelligence",
+    "author": "Angus Fletcher",
+    "coverUrl": "",
+    "synopsis": "PLACEHOLDER",
+    "tags": [
+      "biology",
+      "wisdom",
+      "psychology",
+      "strategy",
+      "AI"
+    ],
+    "quotes": [
+      "Story doesn't occur as timeless math. It inhabits the temporal past-future of why and what if.",
+      "Since logic is A = B, computers process events as equations, so to an AI, 'if fire then smoke' means 'fire = smoke'. And since the terms on either side of an equation are interchangeable, it also means 'smoke = fire'",
+      "If you can't see what's exceptional, then think everything is exceptional.",
+      "The hunters frown. 'When people travel, they keep reading the usual stuff on their phone. They stay in hotels and eat in restaurants. The only locals they meet are staff and shopkeepers. That's why when they come home, they're still thinking the same. Their body traveled, but their mind didn't.",
+      "Management trains you to monitor others, but leaders have their eyes on the future ahead, not the legion behind. Like their tribal ancestors, they lead by example. They know: If the path works, others will follow."
+    ],
     "reviewFile": ""
   }
 ]
