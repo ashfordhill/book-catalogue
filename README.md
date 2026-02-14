@@ -1,13 +1,22 @@
 # Book Catalogue (Under Construction)
 
+With AI-generated covers.
+
+![](book-cover-generation.png)
+
 Intended to be hosted on <https://books.ashhill.dev>
+
+
+## Latest Snapshot
 
 <div align="center" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
   <img src="timeline/screenshot-latest.png" width="600" style="margin:0 8px;" />
 </div>
 
+## GIF Timeline
+
 <div align="center" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-  <img src="timeline/timeline.gif" width="300" style="margin:0 8px;" />
+  <img src="timeline/timeline.gif" width="600" style="margin:0 8px;" />
 </div>
 
 ## Maintenance
