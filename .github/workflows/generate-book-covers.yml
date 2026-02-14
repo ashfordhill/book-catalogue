@@ -55,7 +55,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           
           git add public/covers/ public/books.json
-          git commit -m "chore: add generated book covers [skip ci]"
+          git commit -m "chore: add generated book covers [no ci]"
           git push
       
       - name: Summary
