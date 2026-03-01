@@ -60,7 +60,7 @@ jobs:
           gif_name: 'timeline.gif'
           frame_duration: '2'
           scale_width: '1024'
-          auto_screenshots: 'true'
+          auto_screenshots: 'false'
       
       - name: Commit screenshots if changed
         env:
@@ -73,7 +73,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No screenshot changes to commit"
           else
-            git commit -m "chore: update screenshots and timeline GIF [skip ci]"
+            git commit -m "chore: update screenshots and timeline GIF"
             git push origin HEAD:${{ github.ref }}
           fi
       
