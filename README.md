@@ -1,10 +1,11 @@
 # Book Catalogue (Under Construction)
 
-With AI-generated covers.
+## Hosted on <https://books.ashhill.dev>
+
+With AI-generated covers! Cover themes can be swapped for [all books easily](public/config.json).
 
 ![](book-cover-generation.png)
 
-Intended to be hosted on <https://books.ashhill.dev>
 
 
 ## Latest Snapshot
@@ -31,8 +32,8 @@ The current theme is decided via `coverStyle` in `public/config.json` in order t
 
 - Change the search bar to search for title and not tags since we have a tag filter now.
 
-- Have idea for an animation in the bg but need to figure out how to do it via AI tools.
+- Have [idea for an animation](https://github.com/ashfordhill/background-friends) in the bg but need to figure out how to do it via AI tools.
 
-- Fill out book contents; what is there right now are just placeholders.
+- Need to fill out more books, write reviews..someday. Definitely..(!)
 
 - A book dislike list could be cool. could have the buttons be like '❤️ Books' and '👎 Books'. I suppose the Review display and pop open box contents would be the same. Yeah, I'm doin this.
