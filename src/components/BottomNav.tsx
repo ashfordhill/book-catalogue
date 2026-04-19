@@ -7,7 +7,7 @@ interface BottomNavProps {
 export function BottomNav({ onSearch }: BottomNavProps) {
   
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-black border-t-2 border-purple-500 z-50">
+    <div className="bg-black border-t-2 border-purple-500">
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center gap-4">
           <div className="flex-1">

@@ -45,17 +45,19 @@ function App() {
   
   return (
     <Router>
-      <div className="min-h-screen relative z-10 pt-8 pb-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <Routes>
-            <Route path="/" element={<Home books={uniqueBooks} searchQuery={searchQuery} />} />
-          </Routes>
-        </div>
+      <div className="h-screen flex flex-col relative z-10">
+        <main className="flex-1 overflow-y-auto pt-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto pb-6">
+            <Routes>
+              <Route path="/" element={<Home books={uniqueBooks} searchQuery={searchQuery} />} />
+            </Routes>
+          </div>
+        </main>
+
+        <footer className="shrink-0">
+          <BottomNav onSearch={setSearchQuery} />
+        </footer>
       </div>
-      
-      <BottomNav 
-        onSearch={setSearchQuery}
-      />
     </Router>
   )
 }

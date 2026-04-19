@@ -20,7 +20,7 @@ export function BookCard({ book }: BookCardProps) {
         className="cursor-pointer group"
         onClick={() => setShowModal(true)}
       >
-        <div className="border-2 border-purple-500 transition-all duration-300 hover:border-purple-400 overflow-hidden rounded-sm">
+        <div className="border-2 border-blue-500 transition-all duration-300 hover:border-blue-400 overflow-hidden rounded-sm">
           <div className="aspect-[2/3] overflow-hidden bg-black relative">
             <img
               src={isHovered ? 'static-flipped-slower.webp' : book.coverUrl}
@@ -31,12 +31,12 @@ export function BookCard({ book }: BookCardProps) {
               onMouseLeave={() => setIsHovered(false)}
             />
             {book.readingNow && (
-              <div className="absolute top-2 right-2 bg-pink-500 text-white text-xs font-mono font-bold px-2 py-1 rounded shadow-lg">
+              <div className="absolute top-2 right-2 bg-emerald-500 text-black text-xs font-mono font-bold px-2 py-1 rounded shadow-lg">
                 READING
               </div>
             )}
           </div>
-          <div className="bg-black border-t-2 border-purple-500/50 px-3 py-2 h-14 flex items-end">
+          <div className="bg-black border-t-2 border-blue-500/50 px-3 py-2 h-14 flex items-end">
             <h3 className="font-mono font-bold text-sm line-clamp-2 tracking-wider uppercase text-white">
               {displayTitle}
             </h3>
@@ -45,12 +45,13 @@ export function BookCard({ book }: BookCardProps) {
       </motion.div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={() => setShowModal(false)}>
-          <div className="bg-gray-900 border-2 border-purple-500 p-8 rounded-sm max-w-2xl w-full mx-4 max-h-[85vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <h2 className="font-mono font-bold text-2xl tracking-wider uppercase text-white mb-2">
-              {book.title}
-            </h2>
-            <p className="font-mono text-base text-purple-300 mb-6">
+        <div className="fixed inset-0 bg-black bg-opacity-75 overflow-y-auto z-50" onClick={() => setShowModal(false)}>
+          <div className="min-h-screen flex items-center justify-center p-4">
+            <div className="bg-gray-900 border-2 border-purple-500 p-8 rounded-sm max-w-2xl w-full max-h-[calc(100vh-4rem)] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+              <h2 className="font-sans font-semibold text-2xl tracking-wide uppercase text-white mb-2">
+                {book.title}
+              </h2>
+            <p className="font-sans text-base text-purple-300 mb-6">
               by {book.author}
             </p>
             
@@ -105,6 +106,7 @@ export function BookCard({ book }: BookCardProps) {
             </div>
           </div>
         </div>
+      </div>
       )}
     </>
   );
