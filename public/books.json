@@ -1,9 +1,109 @@
 [
   {
+    "title": "The Next Renaissance: AI and the Expansion of Human Potential",
+    "author": "Zack Kass",
+    "coverUrl": "",
+    "tags": [
+      "AI",
+      "technology",
+      "humanity"
+    ],
+    "quotes": [],
+    "readingNow": true
+  },
+  {
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "coverUrl": "",
+    "tags": [
+      "biology",
+      "evolution",
+      "existentialism"
+    ],
+    "quotes": [],
+    "readingNow": true
+  },
+  {
+    "title": "Influence is Your Superpower: The Science of WinningHearts, Sparking Change, and Making Good Things Happen",
+    "author": "Zoe Chance",
+    "coverUrl": "",
+    "tags": [
+      "psychology",
+      "marketing",
+      "sociology"
+    ],
+    "quotes": [
+      "Gators have evolved for maximum efficiency. Their bodies weigh up to half a ton but require only a tablespoon of brains to operate, and gators need so little food that they can go up to three years without eating at all."
+    ],
+    "readingNow": true
+  },  
+  {
+    "title": "Special Reconnaissance and Advanced Small Unit Patrolling: Tactics Techniques and Procedures for Special Operations Forces",
+    "author": "Edward Wolcoff",
+    "coverUrl": "",
+    "tags": [
+      "military",
+      "strategy",
+      "combat"
+    ],
+    "quotes": [
+      "The problem with being too busy to read is that you learn by experience (or by your men's experience, i.e. the hard way). By reading, you learn through others experiences, generally a better way to do business, especially in our line of work where the consequences of incompetence are so final for young men."
+    ],
+    "readingNow": true
+  },
+  {
+    "title": "A Grief Observed",
+    "author": "C.S. Lewis",
+    "coverUrl": "",
+    "tags": [
+      "grief",
+      "religion",
+      "existentialism"
+    ],
+    "quotes": [
+      "Part of every misery is, so to speak, the misery's shadow or reflection: the fact that you don't merely suffer but have to keep on thinking about the fact that you suffer.",
+      "Her absence is like the sky, spread over everything.",
+      "Reality never repeats. The exact same thing is never taken away and given back.",
+      "It is arrogance in us to call frankness, fairness and chivalry 'masculine' when we see them in a woman; it is arrogance in them to describe a man's sensitiveness or tact or tenderness as 'feminine'."
+    ],
+    "readingNow": false
+  },
+  {
+    "title": "How to Love",
+    "author": "Thich Nhat Hanh",
+    "coverUrl": "",
+    "tags": [
+      "buddhism",
+      "wisdom",
+      "love"
+    ],
+    "quotes": [
+      "True love includes a sense of responsibility and accepting the other person as she is, with all her strengths and weaknesses. If you only like the best things in a person, that is not love.",
+      "The first practice of love is to know oneself.",
+      "We may be filled with goodwill, we may be motivated by the desire to make the other person happy; but out of our clumsiness, we make them unhappy."
+    ],
+    "readingNow": false
+  },
+  {
+    "title": "Hamlet",
+    "author": "William Shakespeare",
+    "coverUrl": "",
+    "tags": [
+      "drama",
+      "historical",
+      "existentialism"
+    ],
+    "quotes": [
+      "Why, look you now, how unworthy a thing you make of me! You would play upon me. You would seem to know my stops. You would pluck out the heart of my mystery. [..] Do you think I am easier to be played on than a pipe? Call me what instrument you will, though you can fret me, yet you cannot play upon me.",
+      "What is a man if his chief good and market of his time be but to sleep and feed? A beast, no more.",
+      "To die, to sleep. To sleep, perchance to dream - ay, there's the rub, for in that sleep of death what dreams may come when we have shuffled off this mortal coil, must give us pause. There's the respect that makes calamity of so long life. For who would bear the whips and scorns of time, th' oppressor's wrong, the proud man's contumely, the pangs of despised love, the law's delay, the insolence of office and the spurns that patient merit of th' unworthy takes, when he himself might his quietus make with a bare bodkin?"
+    ],
+    "readingNow": false
+  },
+  {
     "title": "Shabbat Effect",
     "author": "Alan Morinis",
     "coverUrl": "/covers/cyberpunk-hybrid/shabbat-effect.png",
-    "synopsis": "PLACEHOLDER",
     "tags": [
       "religion",
       "wisdom",
@@ -14,29 +114,28 @@
       "When the mind is dull, the world appears as if seen through a shadowy veil.",
       "The bright mind sees clearly, with a quality we experience when we awaken to look out over the desert on a crisp winter morning."
     ],
-    "reviewFile": "reviews/shabbat-effect.md"
+    "readingNow": false
   },
   {
     "title": "On Character: Choices That Define a Life",
     "author": "Stanley McChrystal",
     "coverUrl": "/covers/cyberpunk-hybrid/on-character-choices-that-define-a-life.png",
-    "synopsis": "PLACEHOLDER",
     "tags": [
       "wisdom",
       "philosophy",
       "reflection"
     ],
     "quotes": [
+      "Great comes more from unwavering effort than from brilliance.",
       "For most of life, we are assessed by our actions, inviting others to judge us by what we do. [...] We can claim to be one thing, but in the end, we are what we do.",
       "A seaworthy ship, fully outfitted with sails but moored tightly to a dock, will not take to sea with the strongest of winds. Instead, battered but unable to move, it will tear itself apart."
     ],
-    "reviewFile": ""
+    "readingNow": false
   },
   {
     "title": "Reincarnation",
     "author": "Thich Nhat Hanh",
     "coverUrl": "/covers/cyberpunk-hybrid/reincarnation.png",
-    "synopsis": "PLACEHOLDER",
     "tags": [
       "religion",
       "buddhism",
@@ -46,13 +145,12 @@
       "According to Buddhist teachings, everything at every level of experience is of the nature to change. Everything is flow - and yet we are capable of guiding that flow.",
       "We always have the chance to correct the past. We say that the past is already gone, but the past is always returning in a new manifestation, and we can correct it if needed."
     ],
-    "reviewFile": ""
+    "readingNow": false
   },
   {
     "title": "The Five People You Meet in Heaven",
     "author": "Mitch Albom",
     "coverUrl": "/covers/cyberpunk-hybrid/the-five-people-you-meet-in-heaven.png",
-    "synopsis": "PLACEHOLDER",
     "tags": [
       "fiction",
       "cerebral",
@@ -63,13 +161,12 @@
       "Sacrifice is a part of life. It’s supposed to be. It’s not something to regret. It’s something to aspire to.",
       "Lost love is still love, Eddie. It takes a different form, that's all. You can't see their smile or bring them food or tousle their hair or move them around a dance floor. But when those senses weaken, another heightens. Memory. Memory becomes your partner. You nurture it. You hold it. You dance with it."
     ],
-    "reviewFile": ""
+    "readingNow": false
   },
   {
     "title": "King Lear",
     "author": "William Shakespeare",
     "coverUrl": "/covers/cyberpunk-hybrid/king-lear.png",
-    "synopsis": "PLACEHOLDER",
     "tags": [
       "fiction",
       "shakespeare",
@@ -80,13 +177,12 @@
       "Nothing can come of nothing.",
       "We that are young shall never see so much, nor live so long."
     ],
-    "reviewFile": ""
+    "readingNow": false
   },
   {
     "title": "The Alchemist",
     "author": "Paulo Coelho",
     "coverUrl": "/covers/cyberpunk-hybrid/the-alchemist.png",
-    "synopsis": "PLACEHOLDER",
     "tags": [
       "fiction",
       "allegory",
@@ -96,13 +192,12 @@
       "When we love, we always strive to become better than we are. When we strive to become better than we are, everything around us becomes better too.",
       "When you want something, all the universe conspires in helping you to achieve it."
     ],
-    "reviewFile": ""
+    "readingNow": false
   },
   {
     "title": "Ask Iwata",
     "author": "Satoru Iwata",
     "coverUrl": "/covers/cyberpunk-hybrid/ask-iwata.png",
-    "synopsis": "PLACEHOLDER",
     "tags": [
       "memoir",
       "wisdom",
@@ -115,13 +210,12 @@
       "If Apple and Nintendo have something in common, it's increasing appeal through simplification.",
       "Good ideas solve multiple problems in a flash."
     ],
-    "reviewFile": ""
+    "readingNow": false
   },
   {
     "title": "Primal Intelligence",
     "author": "Angus Fletcher",
     "coverUrl": "/covers/cyberpunk-hybrid/primal-intelligence.png",
-    "synopsis": "PLACEHOLDER",
     "tags": [
       "biology",
       "wisdom",
@@ -136,6 +230,6 @@
       "The hunters frown. 'When people travel, they keep reading the usual stuff on their phone. They stay in hotels and eat in restaurants. The only locals they meet are staff and shopkeepers. That's why when they come home, they're still thinking the same. Their body traveled, but their mind didn't.",
       "Management trains you to monitor others, but leaders have their eyes on the future ahead, not the legion behind. Like their tribal ancestors, they lead by example. They know: If the path works, others will follow."
     ],
-    "reviewFile": ""
+    "readingNow": false
   }
 ]

@@ -2,34 +2,10 @@ import { useState } from 'react';
 
 interface SearchBoxProps {
   onSearch: (query: string) => void;
-  availableTags: string[];
 }
 
-export function SearchBox({ onSearch, availableTags }: SearchBoxProps) {
+export function SearchBox({ onSearch }: SearchBoxProps) {
   const [query, setQuery] = useState('');
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  
-  const filteredTags = availableTags.filter(tag => 
-    tag.toLowerCase().includes(query.toLowerCase())
-  );
-
-  // Group tags by first letter
-  const groupedTags = filteredTags.reduce((acc, tag) => {
-    const firstLetter = tag[0].toUpperCase();
-    if (!acc[firstLetter]) {
-      acc[firstLetter] = [];
-    }
-    acc[firstLetter].push(tag);
-    return acc;
-  }, {} as Record<string, string[]>);
-
-  const sortedLetters = Object.keys(groupedTags).sort();
-
-  const handleSelect = (tag: string) => {
-    setQuery(tag);
-    onSearch(tag);
-    setShowSuggestions(false);
-  };
 
   return (
     <div className="relative w-full">
@@ -42,9 +18,7 @@ export function SearchBox({ onSearch, availableTags }: SearchBoxProps) {
               setQuery(e.target.value);
               onSearch(e.target.value);
             }}
-            onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-            placeholder="SEARCH_TAGS..."
+            placeholder="SEARCH BY TITLE..."
             className="w-full bg-black text-purple-400 font-mono text-sm font-bold px-4 py-3 outline-none placeholder-purple-400/80 tracking-wider uppercase"
           />
         </div>
@@ -56,29 +30,6 @@ export function SearchBox({ onSearch, availableTags }: SearchBoxProps) {
           </svg>
         </div>
       </div>
-
-      {showSuggestions && filteredTags.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-1 border-2 border-purple-500 bg-black z-50 max-h-96 overflow-y-auto">
-          {sortedLetters.map((letter) => (
-            <div key={letter}>
-              <div className="px-4 py-2 font-mono text-xs font-bold text-purple-500 uppercase bg-black/50 sticky top-0 border-b border-zinc-900">
-                {letter}
-              </div>
-              <div className="grid grid-cols-2 gap-1 p-2">
-                {groupedTags[letter].map((tag) => (
-                  <button
-                    key={tag}
-                    onMouseDown={() => handleSelect(tag)}
-                    className="text-left px-2 py-1 font-mono text-xs font-bold tracking-wider uppercase hover:bg-purple-500/20 transition-colors border border-zinc-800 rounded text-purple-400"
-                  >
-                    &gt; {tag}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

@@ -4,10 +4,9 @@ import { BookCard } from './BookCard';
 interface BookGridProps {
   books: BookWithId[];
   horizontal?: boolean;
-  onBookClick: (book: BookWithId) => void;
 }
 
-export function BookGrid({ books, horizontal = false, onBookClick }: BookGridProps) {
+export function BookGrid({ books, horizontal = false }: BookGridProps) {
   if (horizontal) {
     return (
       <div className="flex gap-6 overflow-x-auto pb-4">
@@ -15,7 +14,6 @@ export function BookGrid({ books, horizontal = false, onBookClick }: BookGridPro
           <div key={book.id} className="flex-shrink-0 w-48">
             <BookCard
               book={book}
-              onClick={() => onBookClick(book)}
             />
           </div>
         ))}
@@ -29,7 +27,6 @@ export function BookGrid({ books, horizontal = false, onBookClick }: BookGridPro
         <BookCard
           key={book.id}
           book={book}
-          onClick={() => onBookClick(book)}
         />
       ))}
     </div>
