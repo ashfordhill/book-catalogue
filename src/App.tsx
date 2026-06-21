@@ -4,6 +4,10 @@ import { BottomNav } from './components/BottomNav'
 import { Home } from './pages/Home'
 import type { Book, BookWithId } from './types'
 
+function getBookId(book: Book): string {
+  return `${book.title}::${book.author}`;
+}
+
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [books, setBooks] = useState<BookWithId[]>([]);
@@ -13,9 +17,9 @@ function App() {
     fetch('/books.json')
       .then(res => res.json())
       .then((data: Book[]) => {
-        const booksWithIds: BookWithId[] = data.map((book, index) => ({
+        const booksWithIds: BookWithId[] = data.map((book) => ({
           ...book,
-          id: `book-${index}`
+          id: getBookId(book)
         }));
         setBooks(booksWithIds);
         setLoading(false);
