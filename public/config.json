@@ -1,10 +1,10 @@
 {
-  "_comment_dalleParams": "DALL-E 3 API parameters for image generation",
-  "_comment_coverStyle": "hybrid: DALL-E background only, then programmatic frame + title/author. backgroundStyleString = prompt for background art (no text).",
+  "_comment_dalleParams": "OpenAI Images API parameters. Use gpt-image-1.5 (style is prompt-only; dall-e-3 accepts style/standard quality if still available on your account).",
+  "_comment_coverStyle": "hybrid: API background art only, then programmatic frame + title/author. backgroundStyleString = prompt for background art (no text).",
   "dalleParams": {
-    "style": "natural",
-    "quality": "standard",
-    "size": "1024x1792"
+    "model": "gpt-image-1.5",
+    "quality": "medium",
+    "size": "1024x1536"
   },
   "coverStyle": {
     "hybrid": true,

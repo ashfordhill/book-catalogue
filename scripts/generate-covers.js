@@ -23,8 +23,15 @@ const openai = new OpenAI({
   apiKey: OPENAI_API_KEY
 });
 
-const COVER_WIDTH = 1024;
-const COVER_HEIGHT = 1792;
+function parseSize(sizeStr) {
+  const [width, height] = sizeStr.split('x').map(Number);
+  if (!width || !height) {
+    throw new Error(`Invalid image size in config: ${sizeStr}`);
+  }
+  return { width, height };
+}
+
+const { width: COVER_WIDTH, height: COVER_HEIGHT } = parseSize(config.dalleParams.size);
 const BORDER_RADIUS = 32;
 const BORDER_WIDTH = 16;
 const PADDING = 48;
@@ -78,6 +85,41 @@ async function downloadImage(url, filepath) {
   });
 }
 
+function mapQuality(model, quality) {
+  if (model === 'dall-e-3') return quality;
+  const legacy = { standard: 'medium', hd: 'high' };
+  return legacy[quality] ?? quality;
+}
+
+function buildImageGenerateParams(prompt) {
+  const { model = 'gpt-image-1.5', quality, size, style } = config.dalleParams;
+  const params = {
+    model,
+    prompt,
+    n: 1,
+    size,
+    quality: mapQuality(model, quality),
+  };
+
+  if (model === 'dall-e-3') {
+    params.style = style;
+    params.response_format = 'url';
+  }
+
+  return params;
+}
+
+async function saveImageFromResponse(response, filepath) {
+  const image = response.data[0];
+  if (image.b64_json) {
+    fs.writeFileSync(filepath, Buffer.from(image.b64_json, 'base64'));
+  } else if (image.url) {
+    await downloadImage(image.url, filepath);
+  } else {
+    throw new Error('API response contained no image data');
+  }
+}
+
 function roundRect(ctx, x, y, w, h, r) {
   ctx.beginPath();
   ctx.moveTo(x + r, y);
@@ -127,7 +169,11 @@ function getCoverFont() {
 
 async function generateBackgroundArt(book, index, total) {
   const { backgroundStyleString, folderName } = config.coverStyle;
-  const { style, quality, size } = config.dalleParams;
+  const { model = 'gpt-image-1.5', style } = config.dalleParams;
+
+  const styleHint = model !== 'dall-e-3' && style
+    ? `\n- Image tone: ${style === 'natural' ? 'natural, less hyper-real' : 'vivid and dramatic'}.`
+    : '';
 
   const prompt = `Abstract background art only for a book cover. NO text, NO words, NO letters, NO typography.
 
@@ -138,24 +184,16 @@ Theme: This book is "${book.title}" by ${book.author}. The image should suggest 
 Requirements:
 - Flat 2D graphic style, face-on. No 3D, no mockups.
 - Richer colors and geometric or digital textures that would sit behind title text.
-- Must be suitable for a dark-themed, cyberpunk-style catalogue.`;
+- Must be suitable for a dark-themed, cyberpunk-style catalogue.${styleHint}`;
 
   console.log(`\n[${index + 1}/${total}] Generating background art: ${book.title}...`);
 
-  const response = await openai.images.generate({
-    model: "dall-e-3",
-    prompt,
-    n: 1,
-    size,
-    quality,
-    style
-  });
+  const response = await openai.images.generate(buildImageGenerateParams(prompt));
 
-  const imageUrl = response.data[0].url;
   const coversDir = path.join(__dirname, '..', 'public', 'covers', folderName);
   fs.mkdirSync(coversDir, { recursive: true });
   const rawPath = path.join(coversDir, `_raw_${book.slug}.png`);
-  await downloadImage(imageUrl, rawPath);
+  await saveImageFromResponse(response, rawPath);
   return rawPath;
 }
 
@@ -248,7 +286,8 @@ async function main() {
   books.forEach(book => {
     console.log(`  - ${book.slug}: "${book.title}" by ${book.author}`);
   });
-  console.log(`\nSave folder: ${config.coverStyle.folderName}\n`);
+  console.log(`\nSave folder: ${config.coverStyle.folderName}`);
+  console.log(`Model: ${config.dalleParams.model ?? 'gpt-image-1.5'}, size: ${config.dalleParams.size}\n`);
 
   const results = [];
 
