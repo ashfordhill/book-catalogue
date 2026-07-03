@@ -1,4 +1,16 @@
-# Book Catalogue (Under Construction)
+# Book Catalogue
+
+Current/Future Reading List
+Last Updated: 7-3-2026
+
+In no particular order:
+
+- The Art of War by Sun Tzu
+- Owning Your Own Shadow by Robert A. Johnson
+- The Expert System's Brother by Adrian Tchaikovsky
+- DMT and the Soul of Prophecy by Rick Strassman
+- Upgrade by Blake Crouch
+- Mistborn by Brandon Sanderson
 
 ## Hosted on <https://books.ashhill.dev>
 
