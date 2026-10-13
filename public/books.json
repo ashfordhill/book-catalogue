@@ -1,5 +1,23 @@
 [
   {
+    "title": "The Righteous Mind: Why Good People Are Divided by Politics and Religion",
+    "author": "Jonathan Haidt",
+    "coverUrl": "",
+    "tags": [
+      "psychology",
+      "morality",
+      "politics"
+    ],
+    "quotes": [
+      "We humans have a dual nature - we are selfish primates who long to be a part of something larger and nobler than ourselves. We are 90 precent chimp and 10 percent bee.",
+      "[In a study] when the selfish player got a shock, people showed less empathy, and some even showed neural evidence of pleasure. In other words, people don't just blindly empathize; they don't sync up with everyone they see. We are conditional hive creatures.",
+      "Morality binds and blinds.",
+      "The human mind is a store processor, not a logic processor.",
+      "Japanese corporations such as Toyota begin their days with synchrnous companywide exercises. Groups prepare for battle - in war and sports - with group chants and ritualized movements."
+    ],
+    "readingNow": true
+  },
+  {
     "title": "Abraham Lincoln",
     "author": "James M. McPherson",
     "coverUrl": "/covers/memphis-vintage/abraham-lincoln.png",
@@ -32,7 +50,7 @@
       "Fifteen years later, with the benefit of hindsight, not all DeepMind's prophecies look accurate. Insights from neuroscience proved useful [...]. And yet, despite these debates and details, DeepMind's road map was prescient. The computational power driving AI models grew almost exactly in line with the business plan's projection.",
       "Memory replay had shown that AI systems would perform better if they mimicked the relationship between the hippocampus and the neocortex. The playing/coaching separation established that dividing an AI system into discrete, brain-like regions could empower stronger agents."
     ],
-    "readingNow": true
+    "readingNow": false
   },
   {
     "title": "The Next Renaissance: AI and the Expansion of Human Potential",
@@ -50,7 +68,7 @@
       "Status quo bias gives us a deep preference for familiarity over change, even when the change is demonstrably better. We see this resistance over and over again.",
       "A child born today is more likely to survive, more likely to read, less likely to live in poverty, less likely to die from violence, and more likely to live a long and healthy life than at any other point in human history. That is not conjecture; it is measurable fact."
     ],
-    "readingNow": true
+    "readingNow": false
   },
   {
     "title": "The Selfish Gene",
@@ -66,7 +84,7 @@
       "The basic unit of biological computers, the nerve cell or neurone is really nothing like a transistor in its internal workings. Certainly the code in which neurones communicate with each other seems to be a little bit like the pulse codes of digital computers, but the individual neurone is a much more sophisticated data-processing unit than the transistor. Instead of just three connections with other components, a single neurone may have tens of thousands. [...] there are some ten thousand million neurones in the human brain: you could pack only a few hundred transistors into a skull.",
       "The workings of the sensory systems are particularly baffling, because they can achieve far more sophisticated feats of pattern-recognition than the best and most expensive man-made machines."
     ],
-    "readingNow": true
+    "readingNow": false
   },
   {
     "title": "Influence is Your Superpower: The Science of Winning Hearts, Sparking Change, and Making Good Things Happen",
@@ -97,7 +115,7 @@
     "quotes": [
       "The problem with being too busy to read is that you learn by experience (or by your men's experience, i.e. the hard way). By reading, you learn through others experiences, generally a better way to do business, especially in our line of work where the consequences of incompetence are so final for young men."
     ],
-    "readingNow": true
+    "readingNow": false
   },
   {
     "title": "A Grief Observed",
