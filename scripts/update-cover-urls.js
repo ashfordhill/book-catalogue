@@ -12,6 +12,24 @@ function sanitizeFilename(str) {
   return str.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-');
 }
 
+function removeOtherThemeCopies(slug, currentFolder, books) {
+  const coversRoot = path.join(__dirname, '..', 'public', 'covers');
+  const referenced = new Set(books.map(book => book.coverUrl).filter(Boolean));
+
+  for (const entry of fs.readdirSync(coversRoot, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name === currentFolder) continue;
+
+    const coverUrl = `/covers/${entry.name}/${slug}.png`;
+    if (referenced.has(coverUrl)) continue;
+
+    const candidate = path.join(coversRoot, entry.name, `${slug}.png`);
+    if (!fs.existsSync(candidate) || !fs.statSync(candidate).isFile()) continue;
+
+    fs.unlinkSync(candidate);
+    console.log(`✓ Removed extra cover from old theme: ${coverUrl}`);
+  }
+}
+
 function main() {
   const booksPath = path.join(__dirname, '..', 'public', 'books.json');
   const folderName = config.coverStyle.folderName;
@@ -35,6 +53,7 @@ function main() {
       if (fs.existsSync(coverPath)) {
         book.coverUrl = `/covers/${folderName}/${slug}.png`;
         console.log(`✓ Updated coverUrl for: ${book.title}`);
+        removeOtherThemeCopies(slug, folderName, books);
         updated = true;
       } else {
         console.log(`⚠ Cover not found for: ${book.title} (expected: ${folderName}/${slug}.png)`);

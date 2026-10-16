@@ -4,6 +4,7 @@ export interface Book {
   coverUrl: string;
   tags: string[];
   quotes: string[];
+  comments?: string[];
   readingNow: boolean;
 }
 

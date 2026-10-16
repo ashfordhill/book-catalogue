@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: generate-book-covers
+  cancel-in-progress: true
+
 jobs:
   generate-covers:
     runs-on: ubuntu-latest
@@ -55,8 +59,22 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
-          git add public/covers/ public/books.json
+
+          git fetch origin main
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            echo "origin/main moved during generation. Skipping commit so the newer run uses the current cover folder."
+            exit 0
+          fi
+
+          FOLDER=$(node -p "JSON.parse(require('fs').readFileSync('public/config.json','utf8')).coverStyle.folderName")
+          git add "public/covers/${FOLDER}/" public/books.json
+          git ls-files -d -z -- public/covers | xargs -0 -r git add --
+
+          if git diff --cached --quiet; then
+            echo "No cover changes to commit."
+            exit 0
+          fi
+
           git commit -m "chore: add generated book covers [no ci]"
           git push
       

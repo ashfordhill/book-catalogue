@@ -54,17 +54,44 @@ export function BookCard({ book }: BookCardProps) {
             <p className="font-sans text-base text-purple-300 mb-6">
               by {book.author}
             </p>
-            
-            {/* Terminal-style quotes */}
+
+            {book.comments && book.comments.length > 0 && (
+              <div className="bg-[#0d1117] border-2 border-[#30363d] rounded-lg shadow-lg overflow-hidden mb-4">
+                <div className="flex items-center gap-2 px-4 py-2 border-b-2 border-[#30363d] bg-[#161b22]">
+                  <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                  <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                  <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                </div>
+                <div className="p-6 font-sans text-base bg-[#0d1117]">
+                  <div className="text-[#79c0ff] mb-2 font-mono">
+                    {'$ echo "$COMMENTS"'}
+                  </div>
+                  <div className="space-y-4 text-[#c9d1d9]">
+                    {book.comments.map((comment, index) => (
+                      <div key={index} className="pl-0">
+                        <span className="text-[#79c0ff] select-none font-mono">&gt; </span>
+                        <span className="text-[#c9d1d9]">
+                          {comment}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 flex items-center gap-1 text-[#8b949e]">
+                    <span className="text-[#79c0ff] font-mono">$</span>
+                    <span className="inline-block w-2 h-4 bg-[#79c0ff] animate-pulse" aria-hidden />
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {book.quotes.length > 0 && (
             <div className="bg-[#0d1117] border-2 border-[#30363d] rounded-lg shadow-lg overflow-hidden mb-4">
-              {/* Terminal title bar */}
               <div className="flex items-center gap-2 px-4 py-2 border-b-2 border-[#30363d] bg-[#161b22]">
                 <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
                 <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
                 <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
               </div>
               
-              {/* Terminal content */}
               <div className="p-6 font-sans text-base bg-[#0d1117]">
                 <div className="text-[#7ee787] mb-2 font-mono">
                   $ cat quotes.txt
@@ -85,6 +112,7 @@ export function BookCard({ book }: BookCardProps) {
                 </div>
               </div>
             </div>
+            )}
             
             <div className="flex flex-wrap gap-2">
               {book.tags.map((tag) => {
