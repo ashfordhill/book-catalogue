@@ -1,4 +1,34 @@
-[
+[  
+    {
+    "title": "Turns Out They Were Right All Along",
+    "author": "Trace Gallagher",
+    "coverUrl": "",
+    "tags": [
+      "biographical",
+      "reflection",
+      "humor"
+    ],
+    "comments": [
+      "Thoughtful, optimistic and humble."
+    ],
+    "quotes": [],
+    "readingNow": true
+  },
+  {
+    "title": "Buddha in a Teacup",
+    "author": "Todd Walton",
+    "coverUrl": "",
+    "tags": [
+      "buddhism",
+      "spiritual",
+      "existential"
+    ],
+    "comments": [
+      "1-3 pager short stories that can be enjoyed with a cup of coffee or tea."
+    ],
+    "quotes": [],
+    "readingNow": false
+  },
   {
     "title": "Outsmart Everyone",
     "author": "Andrew Bustamante",
@@ -51,7 +81,7 @@
       "The human mind is a story processor, not a logic processor.",
       "Japanese corporations such as Toyota begin their days with synchrnous companywide exercises. Groups prepare for battle - in war and sports - with group chants and ritualized movements."
     ],
-    "readingNow": true
+    "readingNow": false
   },
   {
     "title": "Abraham Lincoln",
